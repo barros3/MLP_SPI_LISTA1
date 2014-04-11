@@ -1,35 +1,35 @@
 public class Calculadora {
 
+	PilhaSequencial pilha = new PilhaSequencial();
+
 	public String calculo(String num1, String num2, String operador) {
-		PilhaSequencial pilha = new PilhaSequencial();
 		int num11 = Integer.parseInt(num1);
 		int num22 = Integer.parseInt(num2);
-		pilha.pop();
-		pilha.pop();
-		pilha.pop();
+		int resultado = 0;
+		this.pilha.pop();
+		this.pilha.pop();
+		this.pilha.pop();
 
 		switch (operador) {
 		case "+":
-			int resultadoSom = num11 + num22;
-			pilha.push(resultadoSom + "");
+			resultado = num11 + num22;
+			this.pilha.push(resultado + "");
 			break;
 		case "-":
-			int resultadoSub = num11 - num22;
-			pilha.push(resultadoSub + "");
+			resultado = num11 - num22;
+			this.pilha.push(resultado + "");
 			break;
 		case "*":
-			int resultadoMul = num11 * num22;
-			pilha.push(resultadoMul + "");
+			resultado = num11 * num22;
+			this.pilha.push(resultado + "");
 			break;
 		case "/":
-			int resultadoDiv = num11 / num22;
-			pilha.push(resultadoDiv + "");
+			resultado = num11 / num22;
+			this.pilha.push(resultado + "");
 			break;
 		default:
 			return "#invalido";
 		}
-		return "";
+		return resultado+"";
 	}
-	
 }
-  
