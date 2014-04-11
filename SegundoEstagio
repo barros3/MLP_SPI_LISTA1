@@ -1,0 +1,35 @@
+public class Calculadora {
+
+	public String calculo(String num1, String num2, String operador) {
+		PilhaSequencial pilha = new PilhaSequencial();
+		int num11 = Integer.parseInt(num1);
+		int num22 = Integer.parseInt(num2);
+		pilha.pop();
+		pilha.pop();
+		pilha.pop();
+
+		switch (operador) {
+		case "+":
+			int resultadoSom = num11 + num22;
+			pilha.push(resultadoSom + "");
+			break;
+		case "-":
+			int resultadoSub = num11 - num22;
+			pilha.push(resultadoSub + "");
+			break;
+		case "*":
+			int resultadoMul = num11 * num22;
+			pilha.push(resultadoMul + "");
+			break;
+		case "/":
+			int resultadoDiv = num11 / num22;
+			pilha.push(resultadoDiv + "");
+			break;
+		default:
+			return "#invalido";
+		}
+		return "";
+	}
+	
+}
+  
